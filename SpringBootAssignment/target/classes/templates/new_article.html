@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee management System</title>
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+ crossorigin="anonymous">
+</head>
+<body>
+	<section style="background-color: #8fc4b7;">
+  <div class="container py-3">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">
+          <div class="card-body p-4 p-md-3">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-3 px-md-2">Add New Article</h3>
+
+            <form action="#" th:action="@{/saveArticle}" th:object = "${article}" class="px-md-2" method="POST" >
+
+              <div class="form-outline mb-2">
+				<input type="text" th:field = "*{title}" 
+					placeholder="Article Title" class="form-control mb-4">
+				
+				<input type="hidden" th:field = "*{createdDate}" >
+						
+				<input type="hidden" th:field="*{isDeleted}" />
+						
+				<textarea type="text" th:field = "*{content}" class="form-control" id="content" name="content" placeholder="Article Content" rows="5"></textarea><br>
+              </div>
+
+              
+
+     
+
+              <button type="submit" class="btn btn-success btn-lg mb-1">Save Article</button>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
